@@ -1,7 +1,7 @@
 name: test
 on:
   schedule: 
-    - cron:  '*/15 * * * *'
+    - cron:  '15 0 * * *'
   push:
       branches: [ main ]
     
