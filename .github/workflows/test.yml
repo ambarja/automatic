@@ -4,10 +4,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          bash ./saludo.sh
+      - - uses: r-lib/actions/setup-r@v1
+      - name: Install tidyverse and vroom
+        run: Rscript -e 'install.packages(c("tidyverse","vroom"))'
+      - name: run script
+        run: 
+          update-data.sh
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "generated"
+          git commit -m "update"
           git push
