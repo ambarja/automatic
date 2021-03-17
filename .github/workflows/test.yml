@@ -1,10 +1,16 @@
-name: test
 on:
- - master
+  push:
+    branches:
+    - main
+
 jobs:
-  triage:
-    runs-on: ubuntu-latest
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-18.04
+    
     steps:
-     - uses: actions/labeler@v2
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+
+      - name: use bash
+        run: cat "Hello World"
