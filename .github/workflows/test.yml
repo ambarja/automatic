@@ -1,16 +1,11 @@
+name: "Pull Request Labeler"
 on:
-  push:
-    branches:
-    - main
+- pull_request_target
 
 jobs:
-  my_job:
-    name: deploy to staging
-    runs-on: ubuntu-18.04
-    
+  triage:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner
-
-      - name: use bash
-        run: cat "Hello World"
+    - uses: actions/labeler@main
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
