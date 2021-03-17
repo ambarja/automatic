@@ -1,15 +1,10 @@
 name: test
 on:
-  schedule: 
-    - cron:  '15 0 * * *'
-  push:
-      branches: [ main ]
-    
+ - master
 jobs:
-  build:
+  triage:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Hello, world!
+     - uses: actions/labeler@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
