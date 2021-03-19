@@ -2,9 +2,11 @@ library(purrr)
 library(dplyr)
 library(vroom)
 
+
 download.file(
   url = "https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download",
-  destfile = "./data/casos_positivos.csv"
+  destfile = "./data/casos_positivos.csv",
+  method = 'curl'
 )
 
 vacunas <- vroom(
