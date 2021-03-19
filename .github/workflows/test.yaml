@@ -1,7 +1,7 @@
 name: Update data 
 
 on: [push]
-    
+
 jobs:
   build:
     runs-on: macOS-latest
@@ -16,7 +16,7 @@ jobs:
           Rscript -e "source('script/1_extract_data_covid.R')"
       - name: Commit results 
         run: |  
-          today=$(date +"%Y-%m-%d")
+          today=$(date)
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
