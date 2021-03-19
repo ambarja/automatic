@@ -1,16 +1,19 @@
-on: push
+name: Update data 
+
+on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
-      - name: Install packages
+      - name: Install packages dependencies 
         run: 
           Rscript -e "install.packages(c('tidyverse','vroom'))"
-      - name: run script
+      - name: Run script
         run: 
-          Rscript -e "source('1_extract_data_covid.R')"
+          Rscript -e "source('./1_extract_data_covid.R')"
       - name: Commit results 
         run: |  
           git config user.name github-actions
