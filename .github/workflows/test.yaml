@@ -10,7 +10,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - name: Install packages dependencies 
         run: 
-          Rscript -e "install.packages(c('tidyverse', 'vroom'))"
+          Rscript -e "install.packages(c('tidyverse', 'vroom','RCurl'))"
       - name: Run script
         run: 
           Rscript -e "source('script/1_extract_data_covid.R')"
