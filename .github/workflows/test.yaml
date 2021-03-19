@@ -1,12 +1,9 @@
 name: Update data 
 
-on:
- push:
-    branches:
-      - master
-  schedule:
+on: [push]
+  schedules:
     - cron:  '*/15 * * * *' 
-
+    
 jobs:
   build:
     runs-on: macOS-latest
