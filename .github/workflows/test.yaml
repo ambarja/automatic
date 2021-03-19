@@ -1,8 +1,5 @@
 name: Update data 
-on:
-   push:
-    branches:
-      - main
+on: [push]
   schedule:
   - cron:  '* */6 * * *'
 
