@@ -3,7 +3,7 @@ name: Update data
 on: [push]
 
   schedules:
-     - cron:  '*/15 * * * *' 
+  - cron: "0 12 * * 0"
     
 jobs:
   build:
