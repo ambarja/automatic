@@ -1,9 +1,8 @@
 name: Update data 
 
 on: [push]
-
   schedules:
-  - cron: "0 12 * * 0"
+     - cron: "0 12 * * 0"
     
 jobs:
   build:
