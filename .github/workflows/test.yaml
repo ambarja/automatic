@@ -1,9 +1,11 @@
 name: Update data 
 on: [push]
-  schedule:
-  - cron:  '* /15 * * * *'
+  
 
-jobs:
+ schedule:
+   - cron:  '* /15 * * * *'
+
+jobs: 
   build:
     runs-on: macOS-latest
     steps:
