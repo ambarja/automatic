@@ -1,7 +1,5 @@
 name: Update data 
-on:
-  push:
-   - main
+on: [push]
 
 jobs: 
   build:
