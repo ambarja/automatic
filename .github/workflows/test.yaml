@@ -1,8 +1,9 @@
 name: Update data 
 
 on: [push]
+
   schedules:
-    - cron:  '*/15 * * * *' 
+     - cron:  '*/15 * * * *' 
     
 jobs:
   build:
