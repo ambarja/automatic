@@ -15,6 +15,9 @@ jobs:
           Rscript -e "source('script/1_extract_data_covid.R')"
       - name: Commit results 
         run: |  
-          git add .
-          git commit -m 'update'
-          git push origin
+         git config --local user.email "action@github.com"
+         git config --local user.name "GitHub Action"
+         git checkout -B deploy
+         git add -f public/
+         git commit -m "Build front-end assets"
+         git push -f origin deploy
