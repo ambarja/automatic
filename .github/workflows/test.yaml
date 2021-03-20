@@ -20,6 +20,7 @@ jobs:
           Rscript -e "source('script/1_extract_data_covid.R')"
       - name: Commit results 
         run: |  
+          git reset --hard origin/main
           git add .
           git commit -m 'update'
           git push origin
