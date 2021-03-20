@@ -22,6 +22,6 @@ jobs:
         run: |  
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
+          git add ./data/casos_positivos.rds
           git commit -m "update"
           git push
