@@ -13,10 +13,3 @@ jobs:
       - name: Run script
         run: 
           Rscript -e "source('script/1_extract_data_covid.R')"
-      - name: Commit results 
-        run: |  
-         git config --local user.email "action@github.com"
-         git config --local user.name "GitHub Action"
-         git add . 
-         git commit -m "Build front-end assets"
-         git push -f origin main
