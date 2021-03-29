@@ -2,7 +2,7 @@ name: update Minsa
 on: 
  workflow_dispatch:
   schedule:
-    - cron:  '15 0 * * *' 
+    - cron:   "*/15 * * * *" 
 jobs: 
   autoscrape:
     runs-on: ubuntu-latest
@@ -21,11 +21,11 @@ jobs:
    
     - name: Commit files
       run: |
-          today=$(date +"%Y-%m-%d")
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add data/casos_positivos.rds
-          git commit -m "updated datasets ${today} UTC" -a
+        today=$(date +"%Y-%m-%d")
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/casos_positivos.rds
+        git commit -m "updated datasets ${today} UTC" -a
       env:
         REPO_KEY: ${{secrets.GITHUB_TOKEN}}
         username: github-actions
