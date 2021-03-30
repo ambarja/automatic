@@ -7,12 +7,12 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
-    -uses: actions/cache@v2
-     with:
-     path: ~/.local/share/renv
-      key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-      restore-keys: |
-        ${{ runner.os }}-renv-
+    - uses: actions/cache@v2
+      with:
+       path: ~/.local/share/renv
+       key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+       restore-keys: |
+           ${{ runner.os }}-renv-
 
     - name: Install packages
       run: |
