@@ -1,7 +1,5 @@
 name: update Minsa
-on: 
-  schedule:
-    - cron:   "*/15 * * * *" 
+on: [push]
 jobs: 
   autoscrape:
     runs-on: ubuntu-latest
