@@ -28,8 +28,8 @@ jobs:
         today=$(date +"%Y-%m-%d")
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/casos_positivos_m.rds
-        git commit -m "updated datasets ${today} UTC" -a
+        git add .
+        git commit -m "updated datasets ${today} UTC"
       env:
         REPO_KEY: ${{secrets.GITHUB_TOKEN}}
         username: github-actions
