@@ -1,5 +1,10 @@
 name: update Minsa
-on: [push]
+on: 
+ branches: 
+   - main 
+ schedule:
+  - cron : * 15 * * * 
+  
 
 jobs: 
   autoscrape:
