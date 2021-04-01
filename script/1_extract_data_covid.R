@@ -40,7 +40,7 @@ vacunas <- vroom(
 
 saveRDS(
   vacunas,
-  file = "./data/casos_positivos.rds"
+  file = paste0("./data/","casos_positivos",Sys.Date(),".rds")
 )
 
 file.remove('./data/casos_positivos.csv')
