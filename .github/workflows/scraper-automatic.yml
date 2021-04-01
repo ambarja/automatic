@@ -31,8 +31,9 @@ jobs:
         today=$(date +"%Y-%m-%d")
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add data/*
-        git commit -m "updated datasets ${today} UTC"
+        git pulll
+        git add data/*.rds
+        git commit -m "updated datasets ${today}"
         git push origin main
       env:
         REPO_KEY: ${{secrets.GITHUB_TOKEN}}
