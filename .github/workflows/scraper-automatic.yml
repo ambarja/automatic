@@ -1,7 +1,7 @@
 name: update Minsa
-on:
- schedule:
-  - cron : 0 15 * * * 
+on: [push]
+# schedule:
+#  - cron : 0 15 * * * 
   
 
 jobs: 
